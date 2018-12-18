@@ -1,24 +1,18 @@
 import React from 'react';
 import '../styles/mainContent.css';
-import Book from './Book';
+import BookCollection from './BookCollection';
 
 const bookArray = [
-	{title: "Don Quixote", author: "Miguel de Cervantes", pages: 300},
-	{title: "Ulysses", author: "James Joyce", pages: 450},
-	{title: "The Odyssey", author: "Homer", pages: 232},
-	{title: "War and Peace", author: "Leo Tolstoy", pages: 578},
-	
+	{title: "Don Quixote", author: "Miguel de Cervantes", pages: 300, genre: 'medieval fantasy'},
+	{title: "Ulysses", author: "James Joyce", pages: 450, genre: 'pretentious shit'},
+	{title: "The Odyssey", author: "Homer", pages: 232, genre: 'greek tragedy'},
+	{title: "War and Peace", author: "Leo Tolstoy", pages: 578, genre: 'pretentious shit'}
 ]
-
 
 const MainContent = () => {
 	return (
 		<div id="main-content">
-			{bookArray.map(book => <Book 
-				title={book.title} 
-				author={book.author}
-				pages={book.pages}
-			/>)}
+			<BookCollection genre="pretentious shit" bookArray={bookArray} />
 		</div>
 	)
 }
