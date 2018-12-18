@@ -2,12 +2,23 @@ import React from 'react';
 import '../styles/mainContent.css';
 import Book from './Book';
 
+const bookArray = [
+	{title: "Don Quixote", author: "Miguel de Cervantes", pages: 300},
+	{title: "Ulysses", author: "James Joyce", pages: 450},
+	{title: "The Odyssey", author: "Homer", pages: 232},
+	{title: "War and Peace", author: "Leo Tolstoy", pages: 578},
+	
+]
+
+
 const MainContent = () => {
 	return (
 		<div id="main-content">
-			<Book title="Moby Dick" author="Herman Melville" pages="1000" />
-			<Book title="War and Peace" author="Leo Tolstoy" pages="9000"/>
-			<Book title="Hairy Potter" author="J.K. Rowdy" pages="300"/>
+			{bookArray.map(book => <Book 
+				title={book.title} 
+				author={book.author}
+				pages={book.pages}
+			/>)}
 		</div>
 	)
 }
