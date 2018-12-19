@@ -1,20 +1,26 @@
 import React from 'react';
 import '../styles/mainContent.css';
-import BookCollection from './BookCollection';
+import CharacterList from './CharacterList';
 
-const bookArray = [
-	{title: "Don Quixote", author: "Miguel de Cervantes", pages: 300, genre: 'medieval fantasy'},
-	{title: "Ulysses", author: "James Joyce", pages: 450, genre: 'pretentious shit'},
-	{title: "The Odyssey", author: "Homer", pages: 232, genre: 'greek tragedy'},
-	{title: "War and Peace", author: "Leo Tolstoy", pages: 578, genre: 'pretentious shit'}
-]
+class MainContent extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			characters: []
+		}
+	}
 
-const MainContent = () => {
-	return (
-		<div id="main-content">
-			<BookCollection genre="pretentious shit" bookArray={bookArray} />
-		</div>
-	)
+	componentDidMount() {
+		
+	}
+
+	render() {
+		return (
+			<div id="main-content">
+				<CharacterList characters={this.state.characters} />
+			</div>
+		)
+	}
 }
 
 export default MainContent;
